@@ -1,0 +1,49 @@
+group 'com.iarad'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+idea {
+    project {
+        languageLevel = '1.8'
+    }
+    module {
+        downloadJavadoc = true // defaults to false
+        downloadSources = true
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.google.code.findbugs:jsr305:3.0.1"
+
+    compile "org.slf4j:slf4j-api:1.7.21"
+    compile "ch.qos.logback:logback-core:1.1.7"
+    compile "ch.qos.logback:logback-classic:1.1.7"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+description = """
+d8b                               888
+Y8P                               888
+                                  888
+888  8888b.  888d888 8888b.   .d88888
+888     "88b 888P"      "88b d88" 888
+888 .d888888 888    .d888888 888  888
+888 888  888 888    888  888 Y88b 888
+888 "Y888888 888    "Y888888  "Y88888
+
+                               [TOOLS]
+
+Project name: ${project.name}
+
+Common code and functionality from IARAD
+"""
